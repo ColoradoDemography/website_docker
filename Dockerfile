@@ -7,4 +7,4 @@ apk add --update nodejs
 
 # RUN npm install
 
-CMD ["node", "-v"]
+CMD ["npm", "-v"]
