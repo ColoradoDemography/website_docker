@@ -1,4 +1,4 @@
-FROM jekyll/jekyll:3.0.1
+FROM jekyll/jekyll:3.1
 
 ADD . .
 
