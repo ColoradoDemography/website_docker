@@ -7,7 +7,7 @@ RUN cd / && mkdir app && \
   npm install && \
   git clone https://github.com/ColoradoDemography/coloradodemography.github.io.git
 
-CMD ["node", "/app/index.js"]
+CMD ["node", "/app/jekyll-node-build/index.js"]
 
 
 
