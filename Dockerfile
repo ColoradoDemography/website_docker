@@ -1,14 +1,11 @@
-FROM jekyll/jekyll:pages
+FROM node:5
 
-RUN cd / && mkdir app && \
-  cd app && \
-  git clone https://github.com/ColoradoDemography/jekyll-node-build.git && \
-  cd jekyll-node-build && \
-  npm install && \
-  git clone https://github.com/ColoradoDemography/coloradodemography.github.io.git && \
-  cd ~
+RUN apt-get update && \
+    apt-get install -y ruby ruby-dev gcc git rsync make && \
+    gem install jekyll && \
+    git clone https://github.com/ColoradoDemography/jekyll-node-build.git && \
+    cd jekyll-node-build && \
+    npm install && \
+    git clone https://github.com/ColoradoDemography/coloradodemography.github.io.git
 
-CMD ["node", "/app/jekyll-node-build/index.js"]
-
-
-
+CMD ["node", "index.js"]
