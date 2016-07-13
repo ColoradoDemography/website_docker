@@ -13,10 +13,11 @@ var appRouter = function(app) {
         });
     });
 
-    app.get("/update/co-grants_load", function(req, res) {
-        var command = "cd coloradodemography.github.io/_site && git clone https://github.com/ColoradoDemography/CO_Grants.git";
+    app.get("/update/load_repo", function(req, res) {
+        var repo = req.query.repo;
+        var command = "cd coloradodemography.github.io/_site && git clone https://github.com/ColoradoDemography/" + repo + ".git";
         exec(command, {}, function(error, stdout, stderr) {
-            console.log('-- updating or adding co_grants repo --');
+            console.log('-- updating or adding ' + repo + ' repo --');
             console.log('error: ' + error);
             console.log('stdout: ' + stdout);
             console.log('stderr: ' + stderr);
@@ -24,10 +25,11 @@ var appRouter = function(app) {
         });
     });
   
-    app.get("/update/co-grants_update", function(req, res) {
-        var command = "cd coloradodemography.github.io/_site/CO_Grants && git pull";
+    app.get("/update/update_repo", function(req, res) {
+        var repo = req.query.repo;
+        var command = "cd coloradodemography.github.io/_site/" + repo + " && git pull";
         exec(command, {}, function(error, stdout, stderr) {
-            console.log('-- updating or adding co_grants repo --');
+            console.log('-- updating or adding ' + repo + ' repo --');
             console.log('error: ' + error);
             console.log('stdout: ' + stdout);
             console.log('stderr: ' + stderr);
