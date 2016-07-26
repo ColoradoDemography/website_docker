@@ -36,6 +36,18 @@ var appRouter = function(app) {
             return res.send(stdout + "\n" + stderr + "\nDONE.");
         });
     });
+   
+    app.get("/update/update_repo", function(req, res) {
+        var repo = req.query.repo;
+        var command = "cd coloradodemography.github.io/_site/" + repo + " && git pull";
+        exec(command, {}, function(error, stdout, stderr) {
+            console.log('-- updating or adding ' + repo + ' repo --');
+            console.log('error: ' + error);
+            console.log('stdout: ' + stdout);
+            console.log('stderr: ' + stderr);
+            return res.send(stdout + "\n" + stderr + "\nDONE.");
+        });
+    });
   
 }
 

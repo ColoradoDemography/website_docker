@@ -13,6 +13,11 @@ app.use(function(req, res, next) {
 
 var routes = require("./routes/routes.js")(app);
 
+//Handle 404
+app.use(function(req, res) {
+    res.send(404, 'Page not found');
+});
+
 var server = app.listen(4008, function() {
     console.log("Listening on port %s...", server.address().port);
 });
