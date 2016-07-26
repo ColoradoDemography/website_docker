@@ -3,7 +3,7 @@ Build step for demography.dola.colorado.gov
 
 This is where the magic happens.  The Colorado Demography website is served from the resulting Docker container.
 
-How does this thing work?
+## How does this thing work?
 
 The Dockerfile sets up a combination NodeJS & Ruby environment.
 
@@ -36,7 +36,7 @@ app.use(express.static('coloradodemography.github.io/_site'));
 Hitting this endpoint will run a ```git clone``` command so that a project within a ColoradoDemography repository (and only a ColoradoDemography repository) can be served with the demography.dola.colorado.gov domain.
 
 
-**Route 2**
+**Route 3**
 
 ```
 /update/update_repo?repo=Exact-Name-Of-Repo
@@ -45,7 +45,7 @@ Hitting this endpoint will run a ```git clone``` command so that a project withi
 Hitting this endpoint will run a ```git pull``` command to update the production content to be in sync with the corresponding Github repository.
 
 
-**Of Note**
+### Of Note
 
 The site 404 page is specified within the index.js code.  If you're looking to change the 404, please find the corresponding code here.
 
