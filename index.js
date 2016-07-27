@@ -13,12 +13,6 @@ app.use(function(req, res, next) {
 
 var routes = require("./routes/routes.js")(app);
 
-//Handle 404
-// app.use(function(req, res) {
-//     res.send(404, 'Page not found');
-// });
-
-  
 app.use(function(req, res, next) {
   res.status(404).send('Sorry cant find that!');
 });
