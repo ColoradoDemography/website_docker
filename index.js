@@ -22,10 +22,7 @@ app.use(function(req, res, next) {
 var routes = require("./routes/routes.js")(app);
 
 app.use(function(req, res, next) {
-  res.status(404).send('Sorry cant find that!');
-  res.sendFile(path [, options] [, fn])
-  res.sendFile('public/index1.html' , { root : __dirname});
-  res.sendFile( __dirname + "/coloradodemography.github.io/_site/" + "404.html" );
+  res.status(404).sendFile( __dirname + "/coloradodemography.github.io/_site/" + "404.html" );
 });
 
 var server = app.listen(4008, function() {
