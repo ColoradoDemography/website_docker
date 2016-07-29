@@ -6,9 +6,9 @@ var ipfilter = require('express-ipfilter');
 var app = express();
 
 // IP Whitelist - closes off access outside this building.
-var ips = ['165.127.116.219'];
+var ips = ['165.127.116.219','::ffff:172.17.0.3'];
 
-//app.use(ipfilter(ips, {mode: 'allow'}));
+app.use(ipfilter(ips, {mode: 'allow'}));
 //Because: Access denied to IP address: ::ffff:172.17.0.3
 
 app.use(express.static('coloradodemography.github.io/_site'));
