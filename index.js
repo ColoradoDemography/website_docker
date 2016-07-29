@@ -1,7 +1,14 @@
 //Adapted from: http://itblog.mobi/2015/12/29/how-to-create-a-simple-restful-api-with-node-js/
 
 var express = require("express");
+var ipfilter = require('express-ipfilter');
+
 var app = express();
+
+// IP Whitelist - closes off access outside this building.
+var ips = ['165.127.116.219'];
+
+app.use(ipfilter(ips, {mode: 'allow'}));
 
 app.use(express.static('coloradodemography.github.io/_site'));
 
