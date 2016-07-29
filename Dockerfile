@@ -7,9 +7,7 @@ RUN apt-get update && \
     gem install jekyll && \
     npm install && \
     git clone https://github.com/ColoradoDemography/coloradodemography.github.io.git && \
-    cd coloradodemography.github.io && git pull && jekyll build && \
-    cd _site && \
-    git clone https://github.com/ColoradoDemography/Control-Panel.git
+    cd coloradodemography.github.io 
     
 
 CMD ["node", "index.js"]
