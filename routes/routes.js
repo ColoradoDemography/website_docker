@@ -7,7 +7,6 @@ var exec = require('child_process').exec;
             console.log('error: ' + error);
             console.log('stdout: ' + stdout);
             console.log('stderr: ' + stderr);
-            return res.send("_site folder has been built.  COMPLETE.");
           
             // now load control panel
             exec("cd coloradodemography.github.io/_site && git clone https://github.com/ColoradoDemography/Control-Panel.git", {}, function(error, stdout, stderr) {
@@ -15,7 +14,6 @@ var exec = require('child_process').exec;
               console.log('error: ' + error);
               console.log('stdout: ' + stdout);
               console.log('stderr: ' + stderr);
-              return res.send(stdout + "\n" + stderr + "\nDONE.");
             });
           
         });
