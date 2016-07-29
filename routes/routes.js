@@ -1,22 +1,22 @@
 var exec = require('child_process').exec;
 
         //initialize
-        exec("cd coloradodemography.github.io && git pull && jekyll build", {}, function(error, stdout, stderr) {
+//         exec("cd coloradodemography.github.io && git pull && jekyll build", {}, function(error, stdout, stderr) {
           
-            console.log('-- jekyll: building _site folder --');
-            console.log('error: ' + error);
-            console.log('stdout: ' + stdout);
-            console.log('stderr: ' + stderr);
+//             console.log('-- jekyll: building _site folder --');
+//             console.log('error: ' + error);
+//             console.log('stdout: ' + stdout);
+//             console.log('stderr: ' + stderr);
           
-            // now load control panel
-            exec("cd coloradodemography.github.io/_site && git clone https://github.com/ColoradoDemography/Control-Panel.git", {}, function(error, stdout, stderr) {
-              console.log('-- adding Control Panel repo --');
-              console.log('error: ' + error);
-              console.log('stdout: ' + stdout);
-              console.log('stderr: ' + stderr);
-            });
+//             // now load control panel
+//             exec("cd coloradodemography.github.io/_site && git clone https://github.com/ColoradoDemography/Control-Panel.git", {}, function(error, stdout, stderr) {
+//               console.log('-- adding Control Panel repo --');
+//               console.log('error: ' + error);
+//               console.log('stdout: ' + stdout);
+//               console.log('stderr: ' + stderr);
+//             });
           
-        });
+//         });
 
 var appRouter = function(app) {
 
