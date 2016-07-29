@@ -6,6 +6,11 @@ RUN apt-get update && \
     apt-get install -y ruby ruby-dev gcc git rsync make && \
     gem install jekyll && \
     npm install && \
-    git clone https://github.com/ColoradoDemography/coloradodemography.github.io.git
+    git clone https://github.com/ColoradoDemography/coloradodemography.github.io.git && \
+    cd coloradodemography.github.io && \
+    jekyll build && \
+    cd _site && \
+    git clone https://github.com/ColoradoDemography/Control-Panel.git
+    
 
 CMD ["node", "index.js"]
