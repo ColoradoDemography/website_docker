@@ -8,4 +8,4 @@ RUN apt-get update && \
     git clone https://github.com/ColoradoDemography/WebsiteGrid.git && \
     cd WebsiteGrid
 
-CMD ["node", "index.html"]
+CMD ["node", "index.js"]
