@@ -11,7 +11,7 @@ var app = express();
 //app.use(ipfilter(ips, {mode: 'allow'}));
 //Because: Access denied to IP address: ::ffff:172.17.0.3
 
-app.use(express.static('coloradodemography.github.io/_site'));
+app.use(express.static('Website_Grid/index.html'));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -21,9 +21,9 @@ app.use(function(req, res, next) {
 
 var routes = require("./routes/routes.js")(app);
 
-app.use(function(req, res, next) {
-  res.status(404).sendFile( __dirname + "/coloradodemography.github.io/_site/" + "404.html" );
-});
+//app.use(function(req, res, next) {
+  //res.status(404).sendFile( __dirname + "/coloradodemography.github.io/_site/" + "404.html" );
+//});
 
 var server = app.listen(4008, function() {
     console.log("Listening on port %s...", server.address().port);
