@@ -21,7 +21,7 @@ jobs:
       run:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag codemog/jekyll-website-build
+      run: docker build . --file Dockerfile --tag codemog/website_docker
       
     - name: Docker Push
-      run: docker push codemog/jekyll-website-build
+      run: docker push codemog/website_docker
