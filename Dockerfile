@@ -3,13 +3,9 @@ FROM node:17.4
 ADD . .
 
 RUN apt-get update && \
-    apt-get install -y ruby ruby-dev gcc git rsync make && \
-    gem install jekyll -v 3.1.6 && \
+    apt-get install -y gcc git rsync && \
     npm install && \
-    git clone https://github.com/ColoradoDemography/coloradodemography.github.io.git && \
-    cd coloradodemography.github.io && \
-    jekyll build && \
-    cd _site && \
-    git clone https://github.com/ColoradoDemography/Control-Panel.git
+    git clone https://github.com/ColoradoDemography/WebsiteGrid.git && \
+    cd WebsiteGrid && \
 
 CMD ["node", "index.js"]
