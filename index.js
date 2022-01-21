@@ -11,7 +11,7 @@ var app = express();
 //app.use(ipfilter(ips, {mode: 'allow'}));
 //Because: Access denied to IP address: ::ffff:172.17.0.3
 
-app.use(express.static('WebsiteGrid/index.html'));
+app.use(express.static('public'));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
